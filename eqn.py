@@ -2,29 +2,6 @@
 A linear equation solver over the operations: addition, subtraction, multiplication, and division.
 '''
 
-def main():
-
-
-   #using exception handling and while loop
-
-    equation = input("Enter the equation or press 'q' to quit: ") 
-
-    while equation != "q":
-        try:
-            ans = eqnSolver(equation)
-
-            if ans == "123":
-                print("Division by zero is not permissible!!")
-            else:
-                print("The value of the variable is ", ans)
-        except:
-            print("Please follow the format!! Format: Variable is always x and the equation is always linear. e.g 2/x=3 ") 
-
-        equation = input("Enter the equation or press 'q' to quit: ") 
-
-    print("Bye!")
-    exit()
-
 def eqnSolver(eqn):
 
     #finding indices of operations
@@ -222,6 +199,27 @@ def eqnSolver(eqn):
                 #print("x =", num1/num2)
 
     return answer
-            
+   
+def main():
+
+   #using exception handling and while loop
+
+    equation = input("Enter the equation or press 'q' to quit: ") 
+
+    while equation != "q":
+        try:
+            ans = eqnSolver(equation)
+
+            if ans == "123":
+                print("Division by zero is not permissible!!")
+            else:
+                print("The value of the variable is ", ans)
+        except:
+            print("Please follow the format!! Format: Variable is always x and the equation is always linear. e.g 2/x=3 ") 
+
+        equation = input("Enter the equation or press 'q' to quit: ") 
+
+    print("Bye!")
+    exit()
 
 main()
